@@ -23,3 +23,10 @@ export function setListenerToShowGenreLi() {
         });
     }
 }
+
+// add listener to autor movie
+export function setListenerToAuthor_movie() {
+    let authorMovieBtn = document.getElementById('actor_movie');
+
+    authorMovieBtn.addEventListener('click')
+}

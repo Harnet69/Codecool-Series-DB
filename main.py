@@ -37,7 +37,6 @@ def tv_show(show_id, season=False):
     show_details = queries.get_show_info(show_id)
     show_seasons = queries.get_show_seasons(show_id)
     if season:
-        print('Season')
         return render_template('season.html')
     else:
         return render_template('tv-show.html', show_details=show_details, show_seasons=show_seasons)
@@ -49,7 +48,11 @@ def get_from_db(show_id):
     show_seasons = queries.get_show_seasons_for_popup(show_id)
     return show_seasons
 
-
+# routing show actor
+@app.route('/actor/<int:id>')
+def show_actor(id):
+    actor_details = queries.get_actor_info(id)
+    return render_template('actor.html', actor_details=actor_details)
 
 
 
