@@ -46,7 +46,20 @@
             <section>
                 <h1 class="title text-center">There is "{{show_details[0]['title']}}" details</h1>
                 <div class="card">
+                    <h3>Overview:</h3>
+                    <p>{{ show_details[0]['overview'] }}</p>
+                    <h3>Year:</h3>
+                    <p>{{ show_details[0]['year'] }}</p>
+                    <h3>Run time:</h3>
+                    <p>{{ show_details[0]['runtime'] }}</p>
+                    <h3>Rating:</h3>
+                    <p>{{ show_details[0]['rating'] }}</p>
+                    <h3>Homepage:</h3>
+                    <p><a target="_blank" href="{{ show_details[0]['homepage'] }}">{{ show_details[0]['homepage'] }}</a></p>
+                </div>
+                <div class="card">
                     <h3>Seasons:</h3>
+
                     <ul>
                         {% for show in show_seasons %}
                             <li>
