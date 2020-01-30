@@ -30,7 +30,7 @@ def get_shows_by_genre(showGenre):
 # get information about show seasons by usual way
 def get_show_seasons(show_id):
     try:
-        return data_manager.execute_select("SELECT title FROM seasons WHERE show_id = %s", (show_id,))
+        return data_manager.execute_select("SELECT id, title FROM seasons WHERE show_id = %s", (show_id,))
     except psycopg2.Error as e:
         print(e)
 
