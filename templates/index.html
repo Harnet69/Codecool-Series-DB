@@ -25,18 +25,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style/form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/grid.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style/utils.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/main.css') }}">
 
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
+
+    <!--javaScript -->
+    <script type="module" src="/static/js/main.js"></script>
 
 </head>
 
 <body>
 <div id="body-wrapper">
     <header class="clearfix">
-        <img id="header-logo" src="{{ url_for('static', filename='assets/codecool-logo.png') }}" alt="Codecool Logo">
+        <a href="/"><img id="header-logo" src="{{ url_for('static', filename='assets/codecool-logo.png') }}" alt="Codecool Logo"></a>
         <span id="header-title" class="title">
-                        Codecool Series DB Try
+                        Codecool Series DB WORKING VERSION
                     </span>
         <div id="header-auth">
             <button type="button" id="bt_register">Register</button>
@@ -46,20 +50,23 @@
     <section>
         <h1 class="title text-center">Welcome page</h1>
         <div class="card">
+            <form>
+{#                <button type="submit" formaction="/actors" formmethod="get">Actors</button>#}
+{#                <button type="submit" formaction="/successful-actors" formmethod="get">Successful actors</button>#}
+                <button type="submit" formaction="/genres" formmethod="get">Genres</button>
+{#                <button type="submit" formaction="/all-shows" formmethod="get">All Shows</button>#}
+            </form>
             <h2>Welcome TV show lovers!</h2>
             <p>This great site is happy to bring you your favourite TV show's <i>details</i>.</p>
             <p></p>
             <p>Okay, actually this is a designed dumb page without any logic.</p>
-            <p>You can find a navigational element, the so called "breadcrumb" above the page's title. Use it for
-                in-depth
-                navigation.
-            </p>
         </div>
         <div class="card">
             <ul>
                 {% for show in shows %}
                     <li>
                         <a href="{{ '/tv-show/' + (show['id'] | string) }}">{{ show['title'] }}</a>
+                            <button type="submit" formaction="GET" class="showBtn" data-showBtn="{{ show['id'] }}">Seasons</button>
                     </li>
                 {% endfor %}
             </ul>

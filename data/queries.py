@@ -25,3 +25,19 @@ def get_shows_by_genre(showGenre):
         return json.dumps(data_manager.execute_select(sql_str, (showGenre,)), indent=4, sort_keys=True, default=str)
     except psycopg2.Error as e:
         print(e)
+
+
+# get information about show seasons by usual way
+def get_show_seasons(show_id):
+    try:
+        return data_manager.execute_select("SELECT title FROM seasons WHERE show_id = %s", (show_id,))
+    except psycopg2.Error as e:
+        print(e)
+
+
+# get info about show
+def get_show_info(show_id):
+    try:
+        return data_manager.execute_select('SELECT shows.id, shows.title, shows.runtime, shows.overview, shows.trailer, shows.homepage, shows.year, shows.rating FROM shows WHERE id = %s', (show_id,))
+    except psycopg2.Error as e:
+        print(e)

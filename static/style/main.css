@@ -1,0 +1,30 @@
+.wrapper{
+    background-color: rgba(134, 152, 155, 0.6);
+}
+
+.showSeasonsDiv{
+    color: white;
+    width: 500px;
+    height: 300px;
+    border: 1px solid blue ;
+    position: absolute;
+    margin: 5px auto;
+}
+
+.genre_li{
+    display: inline;
+}
+
+.genre_li:hover{
+    color: red;
+    cursor: pointer;
+}
+
+table tr td{
+    text-align: center;
+}
+
+table tr th a{
+    color: white;
+
+}

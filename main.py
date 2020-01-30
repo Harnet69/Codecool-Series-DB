@@ -28,6 +28,14 @@ def get_show_by_genre(show_genre):
     # print("Flask get a data: ", shows_by_genre)
     return shows_by_genre
 
+# routing for show seasons
+@app.route('/tv-show/<int:show_id>')
+def tv_show(show_id):
+    show_details = queries.get_show_info(show_id)
+    show_seasons = queries.get_show_seasons(show_id)
+    return render_template('tv-show.html', show_details=show_details, show_seasons=show_seasons)
+
+
 
 
 
