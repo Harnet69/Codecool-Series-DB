@@ -63,7 +63,7 @@
                     <ul>
                         {% for show in show_seasons %}
                             <li>
-                                {{ show['title'] }}
+                                <a href="/tv-show/{{ show['title'] }}">{{ show['title'] }}</a>
                             </li>
 
                         {% endfor %}
